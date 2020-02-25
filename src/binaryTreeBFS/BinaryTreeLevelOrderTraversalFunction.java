@@ -15,6 +15,7 @@ public class BinaryTreeLevelOrderTraversalFunction {
 			return result;
 		}
 
+		// Use queue for bfs and stack for dfs
 		Queue<TreeNode> queue = new LinkedList<>();
 
 		// Add the root to the queue as default
@@ -56,12 +57,12 @@ public class BinaryTreeLevelOrderTraversalFunction {
 	public List<List<Integer>> levelOrder1(TreeNode root) {
 		List<List<Integer>> result = new ArrayList<>();
 		
-		levelHelper(result, root, 0);
+		bfs(result, root, 0);
 		
 		return result;
 	}
 	
-	public void levelHelper(List<List<Integer>> result, TreeNode root, int height){
+	public void bfs(List<List<Integer>> result, TreeNode root, int height){
 		// If we reach to the null children
 		if(root == null){
 			// Do nothing
@@ -77,9 +78,9 @@ public class BinaryTreeLevelOrderTraversalFunction {
 		result.get(height).add(root.val);
 		
 		// Get the left children first, increase the height by 1 every time
-		levelHelper(result, root.left, height + 1);
+		bfs(result, root.left, height + 1);
 		
-		levelHelper(result, root.right, height + 1);
+		bfs(result, root.right, height + 1);
 		
 	}
 	
