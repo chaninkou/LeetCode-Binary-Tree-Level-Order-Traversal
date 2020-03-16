@@ -53,7 +53,7 @@ public class BinaryTreeLevelOrderTraversalFunction {
 		return result;
 	}
 	
-	// Faster way of doing it, using recursive
+	// Recursive without queue
 	public List<List<Integer>> levelOrder1(TreeNode root) {
 		List<List<Integer>> result = new ArrayList<>();
 		
