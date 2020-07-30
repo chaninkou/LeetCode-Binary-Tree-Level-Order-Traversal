@@ -1,4 +1,4 @@
-package binaryTreeBFS;
+package leetcode102;
 
 import java.util.LinkedList;
 import java.util.Queue;
